@@ -1,0 +1,17 @@
+﻿id,question,supported,notes
+1,What is retrieval-augmented generation and how does it combine parametric and non-parametric memory?,0.5,"Core definition supported (p.1-3). Claim that RAG accesses 'up-to-date information' is not in the passages (closest is hot-swapping the index, p.9)."
+2,How does a dense dual-encoder retriever compare to BM25 for open-domain question answering?,0,"Contradicted: 41.5% vs 33.3% end-to-end QA is DPR vs ORQA, not vs BM25 (p.2). Top-5 numbers (65.2 vs 42.9) and lexical/semantic point (p.7) are correct."
+3,How does prompting with intermediate reasoning steps improve arithmetic and commonsense reasoning?,0.5,"Claims supported, but cites p.4, which was not retrieved; the commonsense 'physical and human interactions' claim is on p.7, which is not cited."
+4,What are intrinsic and extrinsic hallucinations in natural language generation?,1,Both definitions and both examples match p.4 and p.30.
+5,How do language models interleave reasoning traces and actions to use external sources?,1,"Interleaving, plan create/maintain/adjust, Wikipedia API and interpretability all on p.1-2."
+6,How can a language model teach itself to call external APIs such as a calculator or search engine?,1,"Self-supervised, handful of demonstrations, which/when/arguments, text sequences all on p.1-2."
+7,How does performance change when relevant information is in the middle of a long input context?,1,"U-shaped curve, beginning/end, GPT-3.5-Turbo below closed-book all on p.1-2."
+8,How does a model decide when to retrieve and critique its own output using special reflection tokens?,1,"Retrieval token, relevance and support critique tokens match p.1 and p.4."
+9,What metrics are used to evaluate hallucination in generated text?,1,"n-grams, PARENT, QA-based, NLI-based, human evaluation all on p.9-11. Minor: citation written as a range 'p.9-11'."
+10,How does chain-of-thought prompting behave as model size increases?,1,"~100B emergence and fluent-but-illogical small models (p.4), scaling curves (p.8-9), open question on further scale (p.9)."
+11,Which approach trains the retriever jointly with the generator?,1,Joint end-to-end training without document supervision matches p.2-3.
+12,How are passages encoded and indexed for fast similarity search?,0.5,"FAISS, offline indexing, d-dim encoder, 21M passages supported. But it says encoding details are not provided, while the passages give BERT-base [CLS], d=768 (p.3) and HNSW (2005.11401 p.4)."
+13,Why do models struggle to use documents placed in the middle of the prompt?,1,"U-shaped curve, primacy/recency, not robustly using long contexts (p.2, p.11). Explains what happens rather than why, and says so."
+14,How can a model reduce factual errors by deciding on demand whether to retrieve?,1,"On-demand retrieval token, relevance evaluation, factual accuracy without hurting versatility all on p.1."
+15,What training or decoding choices lead to unfaithful generated text?,1,"Representation learning, wrong attention / mixed-up entities, top-k randomness, exposure bias all on p.8."
+16,How can a model learn to use tools without human annotation for every example?,1,"Handful of examples, LM annotates dataset, self-supervised loss filter, fine-tune on useful calls all on p.2."

@@ -1,0 +1,8 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.streamlit/secrets.toml
+output/
+# arXiv PDFs are only needed to rebuild the index; don't redistribute them
+data/papers/*.pdf
