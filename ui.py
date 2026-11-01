@@ -24,7 +24,7 @@ CSS = f"""
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=Source+Sans+3:wght@400;600&display=swap');
 
 html, body, [data-testid="stAppViewContainer"] {{ background: {MIST}; }}
-[data-testid="stAppViewContainer"] * {{ font-family: 'Source Sans 3', system-ui, sans-serif; }}
+[data-testid="stAppViewContainer"] :is(p, li, label, input, textarea, button, a, td, th, div, span):not([data-testid="stIconMaterial"]):not([class*="material"]) {{ font-family: 'Source Sans 3', system-ui, sans-serif; }}
 [data-testid="stHeader"] {{ background: transparent; }}
 .block-container {{ max-width: 1120px; padding-top: 2rem; }}
 h1, h2, h3, .pd-serif {{ font-family: 'Source Serif 4', Georgia, serif !important; color: {INK}; letter-spacing: -0.01em; }}
@@ -38,7 +38,7 @@ p, li {{ line-height: 1.55; }}
 .pd-hero img {{ width: 100%; height: auto; display: block; }}
 .pd-facts {{ display: flex; gap: 1.6rem; flex-wrap: wrap; color: {INK}; font-size: .98rem; }}
 .pd-facts b {{ font-family: 'Source Serif 4', Georgia, serif; font-size: 1.35rem; display: block; }}
-@media (max-width: 760px) {{ .pd-hero {{ grid-template-columns: 1fr; padding: 1.4rem; }} .pd-hero h1 {{ font-size: 2rem; }} }}
+@media (max-width: 1100px) {{ .pd-hero {{ grid-template-columns: 1fr; padding: 1.4rem; }} .pd-hero h1 {{ font-size: 2rem; }} }}
 
 /* the highlighter */
 .pd-cite {{ background: linear-gradient(transparent 12%, {HIGHLIGHT} 12%, {HIGHLIGHT} 88%, transparent 88%);

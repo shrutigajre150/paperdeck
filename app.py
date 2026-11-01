@@ -84,13 +84,13 @@ def summary_markdown(question, answer, results):
 
 def source_list_html(results):
     rows = []
-    for r in results:
+    for r in sorted(results, key=lambda r: r["score"], reverse=True):
         pid = r["paper_id"]
         quote = html.escape(" ".join(r["text"].split())[:320])
         rows.append(
             f'<div class="pd-src"><span class="pd-cite">{pid}, p.{r["page"]}</span>'
             f'<a href="https://arxiv.org/abs/{pid}" target="_blank">{html.escape(paper_title(pid))}</a>'
-            f'<span class="rel">relevance {r["score"]:.2f}</span>'
+            f'<span class="rel">similarity {r["score"]:.2f}</span>'
             f'<span class="q">&ldquo;{quote}&hellip;&rdquo;</span></div>'
         )
     return "".join(rows)
@@ -229,6 +229,7 @@ with tab_ask:
 
         if results and not not_found:
             st.markdown("### Sources")
+            st.caption("Strongest match first. The answer and slides draw on all of these passages.")
             st.markdown(source_list_html(results), unsafe_allow_html=True)
 
 # ---- How it works ------------------------------------------------------------
